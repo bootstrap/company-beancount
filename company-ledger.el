@@ -106,7 +106,7 @@ Provide completion info based on COMMAND and ARG.  IGNORED, not used."
   (pcase command
     (`interactive (company-begin-backend 'company-ledger))
 
-    (`prefix (and (or (eq major-mode 'beancount-mode)
+    (`prefix (and (or (eq minor-mode 'beancount-mode)
                      (derived-mode-p 'ledger-mode))
                  (company-ledger--next-line-empty-p)
                 (thing-at-point 'line t)))
